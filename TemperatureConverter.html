@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+
+<body>
+    <input type="text" id="temperature" />
+    <select id="convert_to">
+    <option value="Fahrenhite">Fahrenhite</option>
+    <option value="Celsius">Celsius</option>
+</select>
+    <button onclick="temperatureconvert()">Submit</button>
+    <span id="sp"></span>
+
+
+
+
+    <script>
+        function temperatureconvert() {
+            var temp = document.getElementById("temperature").value;
+            var converttof = document.getElementById("convert_to").value;
+            var values = "Fahrenhite" ? ((temp * (9 / 5) + 32).toFixed(0)) : (((5 / 9) * (temp - 32)));
+            console.log(values);
+            // if (converttof == "Fahrenhite") {
+            //     var values = (temp * (9 / 5) + 32).toFixed(0)
+            //     console.log(values);
+
+            // } else {
+            //     var values = ((5 / 9) * (temp - 32));
+            //     console.log(values);
+            // }
+
+        }
+
+        function lof3(n1, n2, n3) {
+            let largest;
+            if (n1 >= n2 && n1 >= n3) {
+                largest = n1;
+            } else if (n2 > n1 && n2 >= n3) {
+                largest = n2;
+            } else {
+                largest = n3;
+            }
+            return largest;
+        }
+        console.log(lof3(95, 56, 85));
+
+        function repl(n1, n2) {
+            let str3;
+            str3 = n1;
+            n1 = n2;
+            n2 = str3;
+            console.log(n1);
+            console.log(n2);
+        }
+        repl("str1", "str2");
+
+        function facto(num) {
+            let f = 1;
+            for (let i = 2; i <= num; i++) {
+                f = f * i;
+
+            }
+            return f;
+        }
+        console.log(facto(6));
+
+        function hasprime(primeno) {
+            let leng = primeno.length;
+            for (i = 0; i < leng; i++) {
+                let chk = isPrime(primeno[i]);
+                if (chk) {
+                    console.log('found', primeno[i]);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function isPrime(num) {
+            for (let i = 2; i <= num - 1; i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        const numArray = [3, 11, 13, 68, 99];
+        console.log(hasprime(numArray));
+
+        function checkB(strarr) {
+            let strleng = strarr.length;
+            let count = 0;
+            for (let i = 0; i < strleng; i++) {
+                if ((strarr[i] == 'b') || (strarr[i] == 'B')) {
+                    count++;
+
+                }
+
+            }
+            return count;
+        }
+        let vv = 0;
+        let strleng = ['boll', 'back', 'B', 'Col'];
+        for (let i = 0; i < strleng.length; i++) {
+            vv += checkB(strleng[i]);
+        }
+        console.log(vv);
+
+        function checkBb() {
+            let strlengl = ['bbbll', 'back', 'B', 'Col', 'bb'];
+            let stri = strlengl.length;
+            let count = 0;
+            for (let i = 0; i < stri; i++) {
+
+                if ((strlengl[i] == 'b') || (strlengl[i] == 'B')) {
+                    count++;
+
+                }
+                console.log(count, "as");
+            }
+
+        }
+        checkBb();
+    </script>
+
+</body>
+
+</html>
